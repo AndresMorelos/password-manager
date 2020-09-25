@@ -1,0 +1,111 @@
+{
+  "name": "Password-Manager",
+  "version": "0.0.1",
+  "description": "Modern, Lightweight, Fast and Free Password Manager",
+  "repository": "https://github.com/AndresMorelos/password-manager.git",
+  "dependencies": {
+    "@swiftyapp/cryptor": "^1.1.0",
+    "classnames": "^2.2.6",
+    "electron-log": "^4.2.4",
+    "electron-unhandled": "^3.0.2",
+    "electron-util": "^0.14.2",
+    "fs-extra": "^9.0.1",
+    "generate-password": "^1.5.1",
+    "googleapis": "^60.0.1",
+    "lodash": "^4.17.20",
+    "luxon": "^1.25.0",
+    "manage-aws-credentials": "^1.4.0",
+    "mousetrap": "^1.6.5",
+    "nucleon": "^1.0.18",
+    "parse-domain": "^3.0.2",
+    "password-validator": "^5.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-tagsinput": "^3.19.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "shortid": "^2.2.15",
+    "speakeasy": "^2.0.0",
+    "universal-analytics": "^0.4.23"
+  },
+  "scripts": {
+    "lint": "npx eslint --color src",
+    "start": "NODE_ENV=development bozon start",
+    "test": "yarn lint && yarn test:unit && yarn test:features",
+    "test:unit": "NODE_ENV=test npx jest test/units",
+    "test:features": "NODE_ENV=test bozon test test/features"
+  },
+  "author": {
+    "name": "Andres Morelos",
+    "email": "andresmorelos123@gmail.com",
+    "url": "https://andresmorelos.com.co"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.1.0",
+    "bozon": "^1.0.7",
+    "css-loader": "^4.3.0",
+    "dotenv-webpack": "^2.0.0",
+    "electron": "^9.2.1",
+    "eslint": "^7.9.0",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.0",
+    "file-loader": "^6.1.0",
+    "jest": "^26.4.2",
+    "node-sass": "^4.14.1",
+    "prettier": "^2.1.2",
+    "react-svg-loader": "^3.0.3",
+    "sass-loader": "^10.0.2",
+    "spectron": "^11.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2"
+  },
+  "resolutions": {
+    "bl": "^4.0.3",
+    "minimist": "^1.2.5",
+    "node-forge": "^0.10.0",
+    "js-yaml": "^3.14.0",
+    "yargs-parser": "^20.2.0",
+    "serialize-javascript": "^5.0.1"
+  },
+  "build": {
+    "appId": "com.andresmorelos.passwordmanager",
+    "fileAssociations": [
+      {
+        "ext": "swftx",
+        "role": "None",
+        "icon": "build/fileicon.icns",
+        "mimeType": "application/vnd.swftx"
+      }
+    ],
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "andresmorelos",
+        "repo": "password-manager"
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "category": "Utilities",
+      "target": [
+        "deb",
+        "rpm",
+        "AppImage"
+      ]
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "category": "public.app-category.utilities"
+    }
+  }
+}
