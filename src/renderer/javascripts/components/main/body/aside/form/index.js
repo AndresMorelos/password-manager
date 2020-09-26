@@ -19,6 +19,7 @@ const Form = ({ entry }) => {
   const [validate, setValidate] = useState(false)
   const [model, setModel] = useState(expose(entry) || entries[scope])
 
+  console.log(model)
   const onCancel = () => {
     if (model.id) {
       dispatch({ type: 'SET_CURRENT_ENTRY', id: model.id })
@@ -83,14 +84,7 @@ const Form = ({ entry }) => {
           />
         )
       case 'aws':
-        return (
-          <AWS
-            entry={model}
-            onChange={onChange}
-            onTagsChange={onTagsChange}
-            validate={validate}
-          />
-        )
+        return <AWS entry={model} onChange={onChange} validate={validate} />
       default:
         return null
     }

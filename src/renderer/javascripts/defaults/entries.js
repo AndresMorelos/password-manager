@@ -30,12 +30,12 @@ export default {
     access_key: undefined,
     secret_access_key: undefined,
     region: undefined,
-    output: undefined,
-    cli_timestamp_format: undefined,
-    cli_follow_urlparam: undefined,
+    output: 'json',
+    cli_timestamp_format: 'none',
+    cli_follow_urlparam: true,
     ca_bundle: undefined,
-    parameter_validation: undefined,
-    tcp_keepalive: undefined,
+    parameter_validation: true,
+    tcp_keepalive: true,
     max_attempts: undefined,
     retry_mode: undefined
   }

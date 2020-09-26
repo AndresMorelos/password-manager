@@ -21,7 +21,11 @@ export default ({ entry, name, link, cc, secure, label = null }) => {
     } else if (secure) {
       return decrypt(entry[name.toLowerCase()])
     } else {
-      return entry[name.toLowerCase()]
+      if (typeof entry[name.toLowerCase()] === 'boolean') {
+        return entry[name.toLowerCase()].toString()
+      } else {
+        return entry[name.toLowerCase()]
+      }
     }
   }
 
