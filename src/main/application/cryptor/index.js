@@ -4,7 +4,7 @@ const SENSITIVE_FIELDS = {
   login: ['password', 'otp'],
   note: ['note'],
   card: ['pin'],
-  aws: ['secret_access_key','access_key']
+  aws: ['secret_access_key']
 }
 
 const btoa = data => {

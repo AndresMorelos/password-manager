@@ -83,7 +83,7 @@ const Form = ({ entry }) => {
         )
       case 'aws':
         return (
-          <AWS 
+          <AWS
             entry={model}
             onChange={onChange}
             onTagsChange={onTagsChange}

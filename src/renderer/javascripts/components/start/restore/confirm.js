@@ -13,6 +13,7 @@ export default ({ display }) => {
   const onSend = () => {
     window.setupCryptor(hashedSecret)
     window.sendBackupPassword(hashedSecret)
+    window.setupAWsCredentialManager()
     window.onBackupPasswordFail(() => {
       setError('Invalid password for backup')
     })

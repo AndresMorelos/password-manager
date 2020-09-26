@@ -4,7 +4,7 @@ import { copy } from 'services/copy'
 
 const { decrypt } = window
 
-export default ({ entry, name, link, cc, secure, label=null }) => {
+export default ({ entry, name, link, cc, secure, label = null }) => {
   const onClick = event => {
     window.openLink(event.target.href)
   }
@@ -36,11 +36,14 @@ export default ({ entry, name, link, cc, secure, label=null }) => {
 
   if (entry[name.toLowerCase()] === '') return null
 
-  return (
-    <div className={className()}>
-      <div className="label">{label !== null ? label : name}</div>
-      <div className="value">{value()}</div>
-      <Copy width="16" height="16" onClick={() => copy(copyValue())} />
-    </div>
-  )
+  if (value() !== undefined && value() !== null) {
+    return (
+      <div className={className()}>
+        <div className="label">{label !== null ? label : name}</div>
+        <div className="value">{value()}</div>
+        <Copy width="16" height="16" onClick={() => copy(copyValue())} />
+      </div>
+    )
+  }
+  return <></>
 }

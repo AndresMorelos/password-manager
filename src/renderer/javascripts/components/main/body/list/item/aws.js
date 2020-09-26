@@ -5,7 +5,9 @@ const AWS = ({ entry }) => {
 
   return (
     <>
-      <div className="icon"><Profile width="32"/></div>
+      <div className="icon">
+        <Profile width="32" />
+      </div>
       <div className="description">
         <div className="primary">{entry.name}</div>
       </div>

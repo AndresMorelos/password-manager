@@ -13,6 +13,7 @@ export default ({ display, hashedSecret }) => {
   const onSend = () => {
     if (hashedSecret === confirmation) {
       window.setupCryptor(hashedSecret)
+      window.setupAWsCredentialManager()
       window.sendSetupDone(hashedSecret)
     } else {
       setError('Passwords do not match')

@@ -27,7 +27,7 @@ export default ({ entry }) => {
       case 'note':
         return <Note entry={entry} />
       case 'aws':
-        return <AWS entry={entry}/>
+        return <AWS entry={entry} />
       default:
         return null
     }

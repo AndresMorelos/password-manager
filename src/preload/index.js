@@ -5,6 +5,7 @@ import './clipboard'
 import './generator'
 import './cryptor'
 import './otp'
+import './awscredentialmanager'
 
 window.isSpectron = () => {
   return process.env.RUNNING_IN_SPECTRON

@@ -2,6 +2,7 @@ import shortid from 'shortid'
 import React from 'react'
 import Item from './item'
 import Empty from './empty'
+import Add from './add'
 import { useSelector } from 'react-redux'
 import { filterEntries } from 'services/entries'
 
@@ -22,6 +23,7 @@ const ManagerList = () => {
       {items.map(entry => (
         <Item entry={entry} key={shortid.generate()} />
       ))}
+      <Add />
     </div>
   )
 }

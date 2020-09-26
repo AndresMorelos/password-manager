@@ -1,7 +1,16 @@
 import React from 'react'
 import classnames from 'classnames'
 
-export default ({ name, entry, validate, onChange, rows, maxLength, label = null }) => {
+export default ({
+  name,
+  entry,
+  validate,
+  onChange,
+  rows,
+  maxLength,
+  label = null,
+  options = []
+}) => {
   const isEmpty = () => {
     return entry[name.toLowerCase()].trim() === ''
   }
@@ -21,6 +30,18 @@ export default ({ name, entry, validate, onChange, rows, maxLength, label = null
           maxLength={maxLength ? maxLength : ''}
           value={entry[name.toLowerCase()]}
         />
+      )
+    } else if (options.length > 0) {
+      return (
+        <select name={name.toLowerCase()} onChange={onChange}>
+          {options.map((option, index) => {
+            return (
+              <option value={option} key={`option-${index}`}>
+                {option.toString()}
+              </option>
+            )
+          })}
+        </select>
       )
     }
     return (

@@ -10,6 +10,7 @@ export const Auth = ({ touchID }) => {
     const hashedSecret = window.hashSecret(value)
     window.setupCryptor(hashedSecret)
     window.sendAuthStart(hashedSecret)
+    window.setupAWsCredentialManager()
     window.onAuthFail(() => {
       setError('Incorrect Master Password')
     })

@@ -14,8 +14,15 @@ const Add = () => {
   }
 
   return (
-    <div className="add-button" onClick={onAddEntry}>
-      <Plus />
+    <div className="entry" onClick={onAddEntry}>
+      <>
+        <div className="icon">
+          <Plus width="32" />
+        </div>
+        <div className="description">
+          <div className="primary">Add entry</div>
+        </div>
+      </>
     </div>
   )
 }

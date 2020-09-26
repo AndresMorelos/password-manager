@@ -25,9 +25,18 @@ export default {
     name: ''
   },
   aws: {
-    type:'aws',
-    name:'',
-    access_key:'',
-    secret_access_key:''
+    type: 'aws',
+    name: undefined,
+    access_key: undefined,
+    secret_access_key: undefined,
+    region: undefined,
+    output: undefined,
+    cli_timestamp_format: undefined,
+    cli_follow_urlparam: undefined,
+    ca_bundle: undefined,
+    parameter_validation: undefined,
+    tcp_keepalive: undefined,
+    max_attempts: undefined,
+    retry_mode: undefined
   }
 }

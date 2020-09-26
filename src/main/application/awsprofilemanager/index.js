@@ -1,27 +1,37 @@
 import AWSProfileManager from 'manage-aws-credentials'
 
 export class AWSCredentialsManager {
-    constructor(){
-        this.manager = AWSProfileManager
-    }
+  constructor() {
+    this.manager = AWSProfileManager
+  }
 
-    loadProfiles(){
-        return this.manager.getCredentials()
-    }
+  loadProfiles() {
+    try {
+      return this.manager.getCredentials()
+    } catch (error) {}
+  }
 
-    addProfile(data){
-        return this.manager.add_profile(data.name, data)
-    }
+  addProfile(data) {
+    try {
+      this.manager.add_profile(data.name, data)
+      this.saveProfiles()
+    } catch (error) {}
+  }
 
-    updateProfile(){
-        return this.manager.edit_profile(data.name, data.name, data)
-    }
+  updateProfile(data) {
+    try {
+      this.manager.edit_profile(data.name, data.name, data)
+      this.saveProfiles()
+    } catch (error) {}
+  }
 
-    deleteProfile(){
-        throw new Error('Not Implemented')
-    }
+  deleteProfile() {
+    console.log('Not Implemented')
+  }
 
-    saveProfiles(){
-        this.manager.save_file()
-    }
+  saveProfiles() {
+    try {
+      return this.manager.save_file()
+    } catch (error) {}
+  }
 }
