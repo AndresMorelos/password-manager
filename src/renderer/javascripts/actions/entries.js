@@ -1,11 +1,22 @@
 import shortid from 'shortid'
 import { DateTime } from 'luxon'
 
-const { sendSaveData, onOnce, sendVaultSyncStart, encryptData, updateAWSProfile, addAWSProfile, expose } = window
+const {
+  sendSaveData,
+  onOnce,
+  sendVaultSyncStart,
+  encryptData,
+  updateAWSProfile,
+  addAWSProfile,
+  deleteAWSProfile,
+  expose
+} = window
 
 export const deleteEntry = id => {
   return (dispatch, getState) => {
+    const entry = getState().entries.items.filter(item => item.id == id)
     const entries = getState().entries.items.filter(item => item.id !== id)
+    deleteAWSProfile(entry[0])
     sendSaveData(encryptData({ entries }))
     onOnce('data:saved', (event, data) => {
       dispatch({ type: 'ENTRY_REMOVED', ...data })
@@ -50,8 +61,10 @@ export const isValid = entry => {
 
 const save = (data, state) => {
   const entries = state.entries.items.slice(0)
+  const entry = entries.find(e => e.id === data.id)
   if (data.id && entries.find(e => e.id === data.id)) {
     if (data.type === 'aws') {
+      data.old_name = entry.name
       updateAWSProfile(expose(data))
     }
     return update(entries, data)

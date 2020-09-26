@@ -8,3 +8,4 @@ window.setupAWsCredentialManager = () => {
 
 window.updateAWSProfile = value => awsCredentialsManager.updateProfile(value)
 window.addAWSProfile = value => awsCredentialsManager.addProfile(value)
+window.deleteAWSProfile = value => awsCredentialsManager.deleteProfile(value)

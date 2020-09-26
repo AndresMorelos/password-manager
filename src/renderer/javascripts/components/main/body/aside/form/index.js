@@ -47,6 +47,7 @@ const Form = ({ entry }) => {
     if (name === 'password') {
       obj['password_updated_at'] = DateTime.local().toISO()
     }
+
     obj[name] = value
     setModel({ ...model, ...obj })
   }

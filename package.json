@@ -1,6 +1,6 @@
 {
   "name": "Password-Manager",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Modern, Lightweight, Fast and Free Password Manager",
   "repository": "https://github.com/AndresMorelos/password-manager.git",
   "dependencies": {
@@ -14,7 +14,7 @@
     "googleapis": "^60.0.1",
     "lodash": "^4.17.20",
     "luxon": "^1.25.0",
-    "manage-aws-credentials": "^1.4.0",
+    "manage-aws-credentials": "^1.6.0",
     "mousetrap": "^1.6.5",
     "nucleon": "^1.0.18",
     "parse-domain": "^3.0.2",

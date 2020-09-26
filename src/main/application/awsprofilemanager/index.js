@@ -20,13 +20,15 @@ export class AWSCredentialsManager {
 
   updateProfile(data) {
     try {
-      this.manager.edit_profile(data.name, data.name, data)
+      data.new_name = data.name
+      this.manager.edit_profile(data.old_name, data)
       this.saveProfiles()
     } catch (error) {}
   }
 
-  deleteProfile() {
-    console.log('Not Implemented')
+  deleteProfile(data) {
+    this.manager.delete_profile(data.name)
+    this.saveProfiles()
   }
 
   saveProfiles() {
