@@ -31,7 +31,7 @@ export default {
     secret_access_key: undefined,
     region: undefined,
     output: 'json',
-    cli_timestamp_format: 'none',
+    cli_timestamp_format: 'wire',
     cli_follow_urlparam: true,
     ca_bundle: undefined,
     parameter_validation: true,
